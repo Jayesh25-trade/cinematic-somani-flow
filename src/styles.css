@@ -61,7 +61,7 @@
   body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
 }
 .somani-page { overflow: clip; background: var(--hero-night); color: var(--hero-mist); position: relative; }
-.hero { height: 100svh; min-height: 650px; max-height: 1100px; position: relative; isolation: isolate; overflow: hidden; }
+.hero { height: 94svh; min-height: 650px; max-height: 1100px; position: relative; isolation: isolate; overflow: hidden; }
 .hero-background { position: absolute; inset: -4%; z-index: -3; background: radial-gradient(ellipse at 55% 48%, var(--brand-navy) 0%, var(--hero-ink) 48%, var(--hero-night) 100%); opacity: 0; will-change: transform; }
 .glow { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(95px); opacity: 0.3; will-change: transform; }
 .glow-red { width: 48vw; height: 48vw; min-width: 480px; min-height: 480px; right: -21vw; top: 2%; background: var(--brand-red); opacity: 0.19; }
