@@ -83,7 +83,7 @@
 .hero-think-scroll, .hero-home-scroll, .hero-somani-scroll, .emblem-scroll { will-change: transform, opacity; }
 .hero-think { margin: 0 0 0 clamp(2px, 5vw, 90px); font-family: var(--font-display); font-size: clamp(84px, 10vw, 166px); font-weight: 300; line-height: 0.75; font-style: italic; color: var(--hero-mist); }
 .hero-home-mask { margin: 0; overflow: hidden; font-family: var(--font-display); font-size: clamp(91px, 12.1vw, 197px); font-weight: 400; line-height: 1.11; white-space: nowrap; letter-spacing: -0.045em; color: var(--hero-mist); }
-.hero-home-mask span { display: block; transform: translateX(-105%); }
+.hero-home-mask span { display: block; }
 .hero-somani { display: flex; gap: 0.23em; justify-content: flex-end; margin: -0.02em 5.5vw 0 0; font-family: var(--font-display); font-size: clamp(57px, 7.8vw, 126px); font-weight: 300; line-height: 1; font-style: italic; color: var(--hero-mist); }
 .hero-somani span { display: inline-block; }
 .hero-somani span:last-child { color: var(--brand-green); }
