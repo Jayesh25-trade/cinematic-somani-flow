@@ -107,7 +107,7 @@
   .hero-content { width: calc(100% - 40px); align-items: center; }
   .hero-copy { margin-top: 8vh; }
   .hero-think { margin-left: 4vw; font-size: clamp(78px, 17vw, 130px); }
-  .hero-home-mask { font-size: clamp(61px, 11.9vw, 98px); line-height: 1.27; letter-spacing: -0.055em; }
+  .hero-home-mask { font-size: clamp(61px, 17vw, 118px); line-height: 1.27; letter-spacing: -0.055em; }
   .hero-somani { margin-right: 2vw; font-size: clamp(51px, 10.5vw, 88px); }
   .emblem-scroll { top: 12%; right: 11%; width: clamp(135px, 30vw, 220px); }
   .scroll-cue { bottom: 30px; }
@@ -118,7 +118,7 @@
 @media (max-width: 430px) {
   .hero-content { width: calc(100% - 32px); }
   .hero-think { font-size: 22vw; }
-  .hero-home-mask { font-size: 11.5vw; }
+  .hero-home-mask { font-size: 17vw; }
   .hero-somani { font-size: 11.5vw; margin-top: 10px; }
   .emblem-scroll { top: 18%; right: 9%; width: 40vw; }
 }
