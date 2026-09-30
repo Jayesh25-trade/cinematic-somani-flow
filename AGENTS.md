@@ -10,4 +10,4 @@
 <!-- LOVABLE:END -->
 
 - The homepage uses the uploaded Somani floral symbol as a CDN asset pointer and renders the requested headline as live type; this preserves the original artwork while allowing cinematic text motion.
-- The homepage uses GSAP/ScrollTrigger and Lenis only after client mount, with a reduced-motion fallback; this keeps server rendering safe and motion accessible.
+- The one-screen homepage uses client-mounted GSAP entrance motion and a muted floral stock-video asset with a still fallback; this keeps server rendering safe and reduced-motion viewing accessible.
