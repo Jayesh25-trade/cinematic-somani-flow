@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import symbol from "@/assets/somani-symbol-clean.png.asset.json";
-import flowersVideo from "@/assets/somani-flowers-sky.mp4.asset.json";
+import flowersVideo from "@/assets/somani-flowers-sky.webm.asset.json";
 import gardenStill from "@/assets/somani-garden-still.jpg";
 
 export const Route = createFileRoute("/")({
