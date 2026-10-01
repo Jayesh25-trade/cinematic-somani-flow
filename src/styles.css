@@ -56,50 +56,20 @@
   body { background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
 }
 
-.somani-screen { position: relative; isolation: isolate; height: 100svh; min-height: 550px; overflow: hidden; background: var(--background); }
-.screen-film { position: absolute; inset: 0; z-index: -2; overflow: hidden; opacity: 0; }
-.screen-film::after { content: ""; position: absolute; inset: 0; background: color-mix(in oklab, var(--background) 35%, transparent); }
-.screen-video, .screen-poster { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.screen-poster { z-index: -1; }
-.screen-video { z-index: 0; }
-.screen-wash { position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--background) 0%, color-mix(in oklab, var(--background) 97%, transparent) 21%, color-mix(in oklab, var(--background) 83%, transparent) 43%, color-mix(in oklab, var(--background) 26%, transparent) 78%, color-mix(in oklab, var(--background) 18%, transparent) 100%); }
-.screen-inner { height: 100%; width: min(100% - 112px, 1460px); margin: 0 auto; position: relative; display: flex; flex-direction: column; }
-.screen-logo { position: absolute; top: clamp(35px, 6vh, 76px); left: 0; width: clamp(98px, 10vw, 155px); opacity: 0; }
-.screen-logo img { width: 100%; height: auto; display: block; }
-.screen-copy { margin: auto 0; padding-top: min(13vh, 145px); width: 100%; color: var(--brand-navy); }
-.screen-think, .screen-home, .screen-somani { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; }
-.screen-think { font-style: italic; font-size: clamp(72px, 9.4vw, 145px); line-height: 0.88; margin: 0 0 8px 0.035em; }
-.screen-home { font-size: clamp(83px, 11vw, 172px); line-height: 1.08; margin: 0; overflow: hidden; white-space: nowrap; }
-.screen-home span { display: block; }
-.screen-somani { display: flex; gap: 0.21em; font-style: italic; font-size: clamp(65px, 8.6vw, 135px); line-height: 1; margin: 0 0 0 clamp(25px, 13vw, 210px); }
-.screen-somani span { display: inline-block; }
-.screen-somani span:last-child { color: var(--brand-red); }
-
-@media (max-width: 900px) {
-  .screen-inner { width: calc(100% - 64px); }
-  .screen-wash { background: linear-gradient(90deg, color-mix(in oklab, var(--background) 96%, transparent), color-mix(in oklab, var(--background) 77%, transparent) 62%, color-mix(in oklab, var(--background) 43%, transparent)); }
-  .screen-think { font-size: clamp(68px, 11vw, 110px); }
-  .screen-home { font-size: clamp(73px, 11.2vw, 105px); }
-  .screen-somani { font-size: clamp(64px, 9vw, 90px); margin-left: 10vw; }
-}
-@media (max-width: 600px) {
-  .somani-screen { min-height: 0; }
-  .screen-inner { width: calc(100% - 38px); }
-  .screen-logo { top: 5.5svh; width: clamp(86px, 23vw, 118px); }
-  .screen-film { inset: 0; }
-  .screen-video, .screen-poster { object-position: 48% center; }
-  .screen-wash { background: linear-gradient(180deg, color-mix(in oklab, var(--background) 70%, transparent) 0%, color-mix(in oklab, var(--background) 89%, transparent) 36%, color-mix(in oklab, var(--background) 91%, transparent) 66%, color-mix(in oklab, var(--background) 44%, transparent) 100%); }
-  .screen-copy { padding-top: 10svh; }
-  .screen-think { font-size: clamp(65px, 18vw, 105px); margin-bottom: 5px; }
-  .screen-home { font-size: clamp(54px, 13.35vw, 80px); line-height: 1.13; }
-  .screen-somani { font-size: clamp(51px, 12.8vw, 76px); margin: 9px 0 0 4vw; gap: 0.14em; }
-}
-@media (max-width: 360px) {
-  .screen-home { font-size: 13vw; }
-  .screen-somani { font-size: 12vw; }
+.somani-screen { position: relative; isolation: isolate; display: grid; place-items: center; width: 100%; min-height: 100svh; overflow: hidden; background: var(--secondary); }
+.loading-veil { position: absolute; inset: 0; z-index: 0; background: var(--background); opacity: 1; transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; }
+.somani-logo { position: relative; z-index: 1; display: block; width: min(70vw, 340px); height: auto; flex: none; object-fit: contain; }
+.loading-progress { position: absolute; z-index: 1; bottom: max(9svh, 40px); left: 50%; width: min(46vw, 168px); transform: translateX(-50%); display: flex; align-items: center; flex-direction: column; gap: 13px; color: var(--brand-navy); opacity: 1; transition: opacity 500ms ease; font-family: var(--font-sans); font-variant-numeric: tabular-nums; }
+.loading-number { font-size: 14px; line-height: 1; font-weight: 500; }
+.loading-percent { margin-left: 2px; font-size: 10px; }
+.loading-track { width: 100%; height: 1px; background: var(--border); overflow: hidden; }
+.loading-fill { width: 100%; height: 100%; background: var(--brand-red); transform-origin: left center; will-change: transform; }
+.is-loaded .loading-veil, .is-loaded .loading-progress { opacity: 0; }
+.is-loaded .loading-progress { visibility: hidden; transition: opacity 500ms ease, visibility 0s 500ms; }
+@media (min-width: 768px) {
+  .somani-logo { width: min(29vw, 390px); }
+  .loading-progress { bottom: 8svh; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .screen-film, .screen-logo { opacity: 1 !important; transform: none !important; filter: none !important; }
-  .screen-think, .screen-home span, .screen-somani span { opacity: 1 !important; transform: none !important; }
-  .screen-video { display: none; }
+  .loading-veil, .loading-progress { transition-duration: 0.01ms; }
 }

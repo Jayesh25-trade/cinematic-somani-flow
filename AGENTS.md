@@ -9,5 +9,5 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- The homepage uses the uploaded Somani floral symbol as a CDN asset pointer and renders the requested headline as live type; this preserves the original artwork while allowing cinematic text motion.
-- The one-screen homepage uses client-mounted GSAP entrance motion and a muted floral stock-video asset with a still fallback; this keeps server rendering safe and reduced-motion viewing accessible.
+- The homepage renders the uploaded Somani floral symbol from its CDN asset pointer as one persistent image across loading and the final view; this prevents a visible logo jump during the transition.
+- The loading sequence waits for the logo image and reaches 100% before fading only the loading layer; this keeps the sole final-screen element stationary and respects reduced-motion preferences.
